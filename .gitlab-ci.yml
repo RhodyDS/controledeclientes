@@ -1,0 +1,10 @@
+stages:
+  - test
+
+tests:
+  stage: test
+  image: mcr.microsoft.com/playwright/python:v1.40.0-jammy
+  script:
+    - pip install playwright
+    - playwright install
+    - xvfb-run python main.py  # Substitua 'your_test_script.py' pelo caminho real do seu script de teste
